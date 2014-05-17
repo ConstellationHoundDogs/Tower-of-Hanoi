@@ -9,8 +9,9 @@ public:
     ~BlockContainer();
     
     void draw(int x, int y);
-    void add(Block* block);
-    Block* pop();
+    bool add(Block* block);
+    Block* getTopBlock();
+    void deleteTopBlock();
     
 private:
     

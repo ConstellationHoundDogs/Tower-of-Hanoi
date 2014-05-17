@@ -22,20 +22,31 @@ void BlockContainer::draw(int x, int y) {
     drawBlocks(x, y);
 }
 
-void BlockContainer::add(Block* block) {
+bool BlockContainer::add(Block* block) {
     if(size > 0){
         if(blocks[size - 1]->getDiameter() >= block->getDiameter()){
             blocks[size++] = block;
+            return true;
         }
     }else{
         blocks[size++] = block;
+        return true;
     }
+    return false;
 }
 
-Block* BlockContainer::pop() {
-    Block* ret = blocks[size - 1];
-    size--;
-    return ret;
+Block* BlockContainer::getTopBlock(){
+    if(size > 0){
+        Block* ret = blocks[size - 1];
+        return ret;
+    }
+    return NULL;
+}
+
+void BlockContainer::deleteTopBlock() {
+    if(size > 0){
+        size--;
+    }
 }
 
 

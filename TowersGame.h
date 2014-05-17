@@ -1,6 +1,7 @@
 #ifndef TOWERSGAME_H
 #define	TOWERSGAME_H
 
+#include <iostream>
 #include "Window.h"
 
 class TowersGame {
